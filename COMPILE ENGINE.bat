@@ -1,17 +1,17 @@
 @echo off
 
-set /p source="Specify the location of the resource: "
+set /p source="Source: "
 
 cd /d "%source%"
 
 set /p debug="On debug mode? (y/n): "
 
 if /i "%debug%"=="y" (
-    set debug_flag=-debug
+    lime test windows -debug
 ) else if /i "%debug%"=="n" (
-    set debug_flag=
+    lime test windows
 ) else (
-    echo Invalid input.
+    echo Invalid input. Please enter y or n.
     pause
     exit /b 1
 )
